@@ -10,24 +10,24 @@ class URLBuilder:
     """
 
     @staticmethod
-def get_historic_matches_url(
-    sport: str,
-    league: str, 
-    season: Optional[str] = None
-) -> str:
+    def get_historic_matches_url(
+        sport: str,
+        league: str, 
+        season: Optional[str] = None 
+    ) -> str:
     """
     Constructs the URL for historical matches of a specific sport league and season.
     """
-    base_url = URLBuilder.get_league_url(sport, league)
+        base_url = URLBuilder.get_league_url(sport, league)
 
-    if not season:
-        return f"{base_url}/results/"
+        if not season:
+            return f"{base_url}/results/"
 
     # Accepts YYYY or YYYY-YYYY
-    if re.match(r"^\d{4}$", season) or re.match(r"^\d{4}-\d{4}$", season):
-        return f"{base_url}-{season}/results/"
-    else:
-        raise ValueError(f"Invalid season format: {season}. Expected format: 'YYYY' or 'YYYY-YYYY'.")
+        if re.match(r"^\d{4}$", season) or re.match(r"^\d{4}-\d{4}$", season):
+            return f"{base_url}-{season}/results/"
+        else:
+            raise ValueError(f"Invalid season format: {season}. Expected format: 'YYYY' or 'YYYY-YYYY'.")
 
 
     @staticmethod
