@@ -159,7 +159,7 @@ class CLIArgumentValidator:
             return errors  # Season validation is only for the historic command
 
         if not season:
-            errors.append("The season argument is required for the 'scrape_historic' command.")
+            # season is optional now, so no error added here
             return errors
 
         # Accepte YYYY ou YYYY-YYYY
