@@ -16,7 +16,7 @@ class URLBuilder:
         season: Optional[str] = None 
     ) -> str:
     """
-    Constructs the URL for historical matches of a specific sport league and season.
+        Constructs the URL for historical matches of a specific sport league and season.
     """
         base_url = URLBuilder.get_league_url(sport, league)
 
